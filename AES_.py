@@ -29,8 +29,8 @@ def mixing_it(mikshed):
         mikshed[_] = np.matmul(mix_it_bro, mikshed[_].reshape(-1, 1)).reshape(4)
     return mikshed.transpose()
 
-def add_key(pizza):
-    return np.add(pizza, keep_this_key_secret)
+def add_key(pizza):     
+    return np.bitwise_xor(pizza, keep_this_key_secret)
 
-done_rAe = mixing_it(shift_rows(sub_stuff(pt)))
+done_rAe = add_key(mixing_it(shift_rows(sub_stuff(pt))))
 print(done_rAe)
